@@ -89,7 +89,7 @@ public final class JumpGenPlugin extends JavaPlugin implements Listener {
         final int deltaY = 1; // always make next block one higher
         final int deltaZ = getRandomDelta();
 
-        // prevent next block from spawning on player
+        // prevent next block from spawning on current block
         return deltaX == 0 && deltaZ == 0
                 ? from.clone().add(1, deltaY, 0)
                 : from.clone().add(deltaX, deltaY, deltaZ);
