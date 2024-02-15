@@ -1,0 +1,4 @@
+name: jump-gen
+version: '${project.version}'
+main: net.mplugins.jumpgen.JumpGenPlugin
+api-version: '1.20'
