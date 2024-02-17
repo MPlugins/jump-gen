@@ -38,7 +38,7 @@ public final class JumpGenPlugin extends JavaPlugin implements Listener {
         final Player player = event.getPlayer();
 
         // check if moved to different block
-        if (from.getBlockX() == to.getBlockX() && from.getBlockZ() == to.getBlockZ())
+        if (from.getBlockX() == to.getBlockX() && from.getBlockY() == to.getBlockY() && from.getBlockZ() == to.getBlockZ())
             return;
 
         final Block targetBlock = to.getBlock().getRelative(BlockFace.DOWN);
@@ -47,8 +47,6 @@ public final class JumpGenPlugin extends JavaPlugin implements Listener {
         if (playerNextJump.containsKey(player.getUniqueId())
                 && player.getLocation().getBlockY() < playerNextJump.get(player.getUniqueId()).getBlockY()) {
             // here when player failed parkour
-            player.sendMessage("§cNice try! Better luck next time. :(");
-
             player.showTitle(
                     Title.title(
                             Component
